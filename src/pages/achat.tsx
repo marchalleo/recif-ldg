@@ -1,30 +1,23 @@
 import { useState } from "react";
 
-export default function ContactForm() {
+export default function Achat() {
   const [prenom, setPrenom] = useState("");
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [creator_client, setCreatorClient] = useState("client");
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const formData = { nom, prenom, email, message, creator_client };
-    const response = await fetch(
-      "https://api.recif.app/api/submitFormContact",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      }
-    );
+    const formData = { nom, prenom, email };
+    const response = await fetch("https://api.recif.app/api/submitFormAchat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
     if (response.ok) {
       //   console.log("envoie : " + response.ok);
       setPrenom("");
       setNom("");
       setEmail("");
-      setMessage("");
-      setCreatorClient("");
       // Le formulaire a été envoyé avec succès
       // Afficher un message de confirmation ou rediriger l'utilisateur
     } else {
@@ -38,9 +31,7 @@ export default function ContactForm() {
       <div id="contact" className="bg-slate-400">
         <div className="container mx-auto">
           <div className="py-20">
-            <h3 className="text-4xl mb-5 moret-bold px-7 sm:px-2">
-              Vous avez des questions :
-            </h3>
+            <h3 className="text-4xl mb-5 moret-bold px-7 sm:px-2">Achat :</h3>
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col sm:flex-row py-2">
                 <div className="flex flex-col w-full sm:w-1/2 px-7 sm:px-2">
@@ -75,29 +66,6 @@ export default function ContactForm() {
                     required
                   />
                 </div>
-                <div className="flex flex-col w-full sm:w-auto px-7 sm:px-2">
-                  <label>Vous êtes :</label>
-                  <select
-                    name="CreatorClient"
-                    id="CreatorClient"
-                    className="mt-3 p-3 rounded-lg"
-                    onChange={({ target: { value } }) =>
-                      setCreatorClient(value)
-                    }
-                  >
-                    <option value="client">Client</option>
-                    <option value="createur">Créateur</option>
-                  </select>
-                </div>
-              </div>
-              <div className="flex flex-col w-full px-7 sm:px-2">
-                <label>Message :</label>
-                <textarea
-                  rows={4}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className="mt-3 p-3 rounded-lg"
-                ></textarea>
               </div>
               <div className="px-7 sm:px-2">
                 <button
