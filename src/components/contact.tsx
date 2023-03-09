@@ -5,7 +5,7 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [creator_client, setCreatorClient] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const formData = { email, message, creator_client };
     const response = await fetch("https://api.recif.app/api/submitForm", {
