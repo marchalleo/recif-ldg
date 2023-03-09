@@ -24,7 +24,7 @@ export default function ContactForm() {
       setNom("");
       setEmail("");
       setMessage("");
-      setCreatorClient("");
+      setCreatorClient("client");
       // Le formulaire a été envoyé avec succès
       // Afficher un message de confirmation ou rediriger l'utilisateur
     } else {
