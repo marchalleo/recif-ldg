@@ -3,10 +3,13 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <footer className="w-full bg-slate-600">
+      <footer className="w-full bg-slate-700">
         <div className="py-16 container mx-auto">
-          <div className="w-full h-full flex justify-between items-center">
-            <Link href={"/"} className="flex justify-start items-center">
+          <div className="w-full h-full flex flex-col sm:flex-row justify-between items-center">
+            <Link
+              href={"/"}
+              className="flex justify-start items-center mb-5 sm:mb-0"
+            >
               <svg
                 width="60"
                 height="60"
@@ -23,10 +26,10 @@ export default function Footer() {
               <p className="ml-3 moret-bold text-4xl text-[#76BCB0]">Recif</p>
             </Link>
             <div>
-              <Link href={""} className="mr-3 text-md">
+              <Link href={""} className="mr-3 text-md text-[#76BCB0]">
                 TikTok
               </Link>
-              <Link href={""} className="text-md">
+              <Link href={""} className="text-md text-[#76BCB0]">
                 Instagram
               </Link>
             </div>

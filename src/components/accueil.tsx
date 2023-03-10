@@ -20,7 +20,7 @@ export default function Accueil() {
                 est le faux texte standard de l'imprimerie depuis les années.
               </p>
               <Link
-                href={"#c"}
+                href={"/contact"}
                 className="p-4 bg-[#2E7265] text-white shadow-lg"
               >
                 Télécharger

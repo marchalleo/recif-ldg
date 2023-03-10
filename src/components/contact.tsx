@@ -35,7 +35,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <div id="contact" className="bg-slate-400">
+      <div id="contact" className="bg-slate-200">
         <div className="container mx-auto">
           <div className="py-20">
             <h3 className="text-4xl mb-5 moret-bold px-7 sm:px-2">

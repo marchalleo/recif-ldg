@@ -1,10 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
-import produit from "../../public/product.png";
+import produit1 from "../../public/products/product.png";
 import wave from "../../public/wave.svg";
 
 export default function Produits() {
-  const products = [{}, {}, {}, {}, {}, {}, {}, {}];
+  const products = [
+    {
+      name: "Nauco Shop",
+      img: produit1,
+      title: "Pochette zèbre",
+      price: "14€",
+    },
+    {
+      name: "Nauco Shop",
+      img: produit1,
+      title: "Pochette zèbre",
+      price: "14€",
+    },
+    {
+      name: "Nauco Shop",
+      img: produit1,
+      title: "Pochette zèbre",
+      price: "14€",
+    },
+    {
+      name: "Nauco Shop",
+      img: produit1,
+      title: "Pochette zèbre",
+      price: "14€",
+    },
+    {
+      name: "Nauco Shop",
+      img: produit1,
+      title: "Pochette zèbre",
+      price: "14€",
+    },
+    {
+      name: "Nauco Shop",
+      img: produit1,
+      title: "Pochette zèbre",
+      price: "14€",
+    },
+    {
+      name: "Nauco Shop",
+      img: produit1,
+      title: "Pochette zèbre",
+      price: "14€",
+    },
+    {
+      name: "Nauco Shop",
+      img: produit1,
+      title: "Pochette zèbre",
+      price: "14€",
+    },
+  ];
   return (
     <div>
       <Image
@@ -25,18 +74,18 @@ export default function Produits() {
               >
                 <div className="flex justify-start items-center p-3 sm:p-5">
                   <span className="block w-9 h-9 bg-black rounded-full"></span>
-                  <p className="ml-4">Nauco Shop</p>
+                  <p className="ml-4">{p.name}</p>
                 </div>
                 <div className="flex justify-center items-center my-3 sm:my-5">
-                  <Image src={produit} alt="" className="max-w-[6rem]" />
+                  <Image src={p.img} alt="" className="max-w-[6rem]" />
                 </div>
                 <div className="p-5 flex flex-col">
                   <div className="flex justify-between mb-4">
-                    <p className="font-light">Pochette zebre</p>
-                    <p className="font-semibold text-lg">14€</p>
+                    <p className="font-light">{p.title}</p>
+                    <p className="font-semibold text-lg">{p.price}</p>
                   </div>
                   <Link
-                    href={""}
+                    href={"/achat"}
                     className="bg-[#2E7265] text-white px-4 py-3 text-center"
                   >
                     Acheter

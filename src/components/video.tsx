@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import video from "../../public/video.jpg";
+import video from "../../public/videos/video.jpg";
 
 export default function Video() {
   return (
