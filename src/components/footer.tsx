@@ -26,10 +26,18 @@ export default function Footer() {
               <p className="ml-3 moret-bold text-4xl text-[#76BCB0]">Recif</p>
             </Link>
             <div>
-              <Link href={""} className="mr-3 text-md text-[#76BCB0]">
+              <Link
+                target="_blank"
+                href={"https://www.tiktok.com/@.recif"}
+                className="mr-3 text-md text-[#76BCB0]"
+              >
                 TikTok
               </Link>
-              <Link href={""} className="text-md text-[#76BCB0]">
+              <Link
+                target="_blank"
+                href={"https://www.instagram.com/recif.store/"}
+                className="text-md text-[#76BCB0]"
+              >
                 Instagram
               </Link>
             </div>

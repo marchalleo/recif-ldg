@@ -15,9 +15,9 @@ export default function Accueil() {
                 Bienvenue sur Recif
               </h1>
               <p className="mb-8">
-                Le Lorem Ipsum est simplement du faux texte employé dans la
-                composition et la mise en page avant impression. Le Lorem Ipsum
-                est le faux texte standard de l'imprimerie depuis les années.
+                Vous découvrirez bientôt une expérience de shopping en ligne
+                unique responsable et respectueuse de l'environnement sur notre
+                application.
               </p>
               <Link
                 href={"/contact"}

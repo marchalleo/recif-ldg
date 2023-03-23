@@ -7,10 +7,11 @@ export default function Achat() {
   const [prenom, setPrenom] = useState("");
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
+  const [id_produit, setProduct] = useState("");
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const formData = { nom, prenom, email };
+    const formData = { nom, prenom, email, id_produit };
     const response = await fetch("https://api.recif.app/api/submitFormAchat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -21,6 +22,7 @@ export default function Achat() {
       setPrenom("");
       setNom("");
       setEmail("");
+      setProduct("default");
       // Le formulaire a été envoyé avec succès
       // Afficher un message de confirmation ou rediriger l'utilisateur
     } else {
@@ -80,7 +82,7 @@ export default function Achat() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row py-2">
-                <div className="flex flex-col w-full sm:w-1/2 px-7 sm:px-2">
+                <div className="flex flex-col w-1/2 sm:w-1/2 px-7 sm:px-2">
                   <label>Email :</label>
                   <input
                     type="email"
@@ -89,6 +91,26 @@ export default function Achat() {
                     className="mt-3 p-3 rounded-lg"
                     required
                   />
+                </div>
+                <div className="flex flex-col w-1/2 sm:w-auto px-7 sm:px-2">
+                  <label>Produit sélectionné :</label>
+                  <select
+                    name="CreatorClient"
+                    id="CreatorClient"
+                    className="mt-3 p-3 rounded-lg"
+                    defaultValue={"default"}
+                    onChange={({ target: { value } }) => setProduct(value)}
+                  >
+                    <option value="default">Selectionez...</option>
+                    <option value="bob_bleu">Bob bleu</option>
+                    <option value="bob_blanc">Bob blanc</option>
+                    <option value="cabas_ralph_lauren">
+                      Cabas Ralph Lauren
+                    </option>
+                    <option value="pochette">Pochette</option>
+                    <option value="caba-lacoste">Cabas lacoste</option>
+                    <option value="trousse">Trousse</option>
+                  </select>
                 </div>
               </div>
               <div className="px-7 sm:px-2">
