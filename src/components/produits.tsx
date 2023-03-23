@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import bob1 from "../../public/products/bob1.webp";
 import bob2 from "../../public/products/bob2.webp";
+import cabaslacoste from "../../public/products/cabas-lacoste.webp";
+import nauco from "../../public/products/nauco.png";
+import wearmisa from "../../public/products/wearmisa.png";
 import pochette from "../../public/products/product.png";
 import ralph from "../../public/products/sacra-la.webp";
-import cabaslacoste from "../../public/products/cabas-lacoste.webp";
 import trousse from "../../public/products/trousse.webp";
 import wave from "../../public/wave.svg";
 
@@ -15,36 +17,42 @@ export default function Produits() {
       img: bob1,
       title: "Le bob - bleu",
       price: "28€",
+      artist: nauco,
     },
     {
       name: "Wearmisa",
       img: ralph,
       title: "Le cabas Ralph Lauren",
       price: "90€",
+      artist: wearmisa,
     },
     {
       name: "Nauco Shop",
       img: pochette,
       title: "Pochette",
       price: "14€",
+      artist: nauco,
     },
     {
       name: "Wearmisa",
       img: cabaslacoste,
       title: "Le cabas Lacoste",
       price: "90€",
+      artist: wearmisa,
     },
     {
       name: "Nauco Shop",
       img: bob2,
       title: "Le bob - blanc",
       price: "28€",
+      artist: nauco,
     },
     {
       name: "Nauco Shop",
       img: trousse,
       title: "Trousse",
       price: "18€",
+      artist: nauco,
     },
   ];
   return (
@@ -66,7 +74,10 @@ export default function Produits() {
                 className="bg-white w-[80%] sm:w-[45%] lg:w-[30%] flex flex-col justify-between rounded-lg m-1 my-5 px-4 lg:px-0 shadow-md"
               >
                 <div className="flex justify-start items-center p-3 sm:p-5">
-                  <span className="block w-9 h-9 bg-black rounded-full"></span>
+                  <span
+                    className="block w-9 h-9 rounded-full bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: `url(${p.artist.src})` }}
+                  ></span>
                   <p className="ml-4">{p.name}</p>
                 </div>
                 <div className="flex justify-center items-center my-3 sm:my-5">
