@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import Footer from "@/components/footer";
+import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Achat() {
   const [prenom, setPrenom] = useState("");
@@ -25,7 +27,11 @@ export default function Achat() {
       setProduct("default");
       // Le formulaire a été envoyé avec succès
       // Afficher un message de confirmation ou rediriger l'utilisateur
+      toast.success(
+        "Message envoyé avec succès. Nous vous contactons au plus vite !"
+      );
     } else {
+      toast.warn("Une erreur est survenue, veuillez réessayer");
       // Il y a eu une erreur lors de l'envoi du formulaire
       // Afficher un message d'erreur ou gérer l'erreur d'une autre manière
     }
@@ -33,6 +39,15 @@ export default function Achat() {
 
   return (
     <>
+      <Head>
+        <title>Recif</title>
+        <meta
+          name="description"
+          content="Plus qu'une tendance, un art de vivre"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/icon.svg" />
+      </Head>
       <div className="w-full h-[10vh] flex justify-center items-center">
         <Link href={"/"} className="flex justify-start items-center">
           <svg

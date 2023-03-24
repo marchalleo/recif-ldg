@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function ContactForm() {
   const [prenom, setPrenom] = useState("");
@@ -27,7 +28,11 @@ export default function ContactForm() {
       setCreatorClient("client");
       // Le formulaire a été envoyé avec succès
       // Afficher un message de confirmation ou rediriger l'utilisateur
+      toast.success(
+        "Message envoyé avec succès. Nous vous contactons au plus vite !"
+      );
     } else {
+      toast.warn("Une erreur est survenue, veuillez réessayer");
       // Il y a eu une erreur lors de l'envoi du formulaire
       // Afficher un message d'erreur ou gérer l'erreur d'une autre manière
     }
