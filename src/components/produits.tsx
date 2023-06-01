@@ -1,57 +1,57 @@
-import Image from "next/image";
-import Link from "next/link";
-import bob1 from "../../public/products/bob1.webp";
-import bob2 from "../../public/products/bob2.webp";
-import cabaslacoste from "../../public/products/cabas-lacoste.webp";
-import nauco from "../../public/products/nauco.png";
-import wearmisa from "../../public/products/wearmisa.png";
-import pochette from "../../public/products/product.png";
-import ralph from "../../public/products/sacra-la.webp";
-import trousse from "../../public/products/trousse.webp";
-import wave from "../../public/wave.svg";
+import Image from 'next/image';
+import Link from 'next/link';
+import bob1 from '../../public/products/bob1.webp';
+import bob2 from '../../public/products/bob2.webp';
+import cabaslacoste from '../../public/products/cabas-lacoste.webp';
+import nauco from '../../public/products/nauco.png';
+import pochette from '../../public/products/product.png';
+import ralph from '../../public/products/sacra-la.webp';
+import trousse from '../../public/products/trousse.webp';
+import wearmisa from '../../public/products/wearmisa.png';
+import wave from '../../public/wave.svg';
 
 export default function Produits() {
   const products = [
     {
-      name: "Nauco Shop",
+      name: 'Nauco Shop',
       img: bob1,
-      title: "Le bob - bleu",
-      price: "28€",
+      title: 'Le bob - bleu',
+      price: '28€',
       artist: nauco,
     },
     {
-      name: "Wearmisa",
+      name: 'Wearmisa',
       img: ralph,
-      title: "Le cabas Ralph Lauren",
-      price: "90€",
+      title: 'Le cabas Ralph Lauren',
+      price: '90€',
       artist: wearmisa,
     },
     {
-      name: "Nauco Shop",
+      name: 'Nauco Shop',
       img: pochette,
-      title: "Pochette",
-      price: "14€",
+      title: 'Pochette',
+      price: '14€',
       artist: nauco,
     },
     {
-      name: "Wearmisa",
+      name: 'Wearmisa',
       img: cabaslacoste,
-      title: "Le cabas Lacoste",
-      price: "90€",
+      title: 'Le cabas Lacoste',
+      price: '90€',
       artist: wearmisa,
     },
     {
-      name: "Nauco Shop",
+      name: 'Nauco Shop',
       img: bob2,
-      title: "Le bob - blanc",
-      price: "28€",
+      title: 'Le bob - blanc',
+      price: '28€',
       artist: nauco,
     },
     {
-      name: "Nauco Shop",
+      name: 'Nauco Shop',
       img: trousse,
-      title: "Trousse",
-      price: "18€",
+      title: 'Trousse',
+      price: '18€',
       artist: nauco,
     },
   ];
@@ -89,7 +89,7 @@ export default function Produits() {
                     <p className="font-semibold text-lg">{p.price}</p>
                   </div>
                   <Link
-                    href={"/achat"}
+                    href={'/achat'}
                     className="bg-[#2E7265] text-white px-4 py-3 text-center"
                   >
                     Acheter
